@@ -20,6 +20,12 @@ const leerDatos = () => {
 }
 const crear = (descripcion) => {
     leerDatos();
+
+    let index = tareasPorhacer.findIndex(tarea => tarea.descripcion === descripcion);
+
+    if (index > 0) {
+        return false
+    }
     let tarea = {
         descripcion,
         completado: false

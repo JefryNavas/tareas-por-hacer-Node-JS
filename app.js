@@ -7,8 +7,13 @@ switch (comando) {
     case "crear":
         console.log("Creando una tarea...".yellow);
         let tarea = crear(argv.descripcion);
-        console.log("tarea: ", tarea.descripcion);
-        console.log("Tarea Guardada Correctamente".green);
+        if (tarea == false) {
+            console.log("La tarea ingresada ya existe".red);
+        } else {
+            console.log("tarea: ", tarea.descripcion);
+            console.log("Tarea Guardada Correctamente".green);
+        }
+
         break;
     case "listar":
         console.log("Listando tareas...".yellow);
